@@ -12,8 +12,6 @@ public class ClientTest extends TestCase {
 
     public void testClient2() throws IOException {
         String pagecontent = Client.get("http://67.220.90.4/bbs/forumdisplay.php?fid=143&filter=digest");
-        byte[] bytes = pagecontent.getBytes(("ISO-8859-1"));
-        String utf8 = new String(bytes, "GBK");
-        System.out.println(utf8);
+        System.out.println(pagecontent);
     }
 }

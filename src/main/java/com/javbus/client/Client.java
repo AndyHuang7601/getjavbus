@@ -37,7 +37,7 @@ public class Client {
 
         Response response = client.newCall(request).execute();
 
-        return response.body().string();
+        return new String(response.body().bytes(),"GBK");
 
     }
 }
