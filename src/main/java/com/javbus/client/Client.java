@@ -37,7 +37,7 @@ public class Client {
 
         Response response = client.newCall(request).execute();
 
-        return new String(response.body().bytes(),"GBK");
+        return new String(response.body().bytes(),"GBK");//http://www.javaeerun.com/p/1461120389148.html
 
     }
 }
