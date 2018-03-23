@@ -13,7 +13,7 @@ public class Client {
     private static String proxyHost="192.168.1.103";
     private static int proxyPort=8888;
 
-    public static void main(String[] args) throws IOException {
+    public static String get() throws IOException {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
@@ -36,8 +36,7 @@ public class Client {
 
         Response response = client.newCall(request).execute();
 
-        String string = response.body().string();
+        return response.body().string();
 
-        System.out.println(string);
     }
 }
