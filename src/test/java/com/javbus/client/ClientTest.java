@@ -4,11 +4,13 @@ import junit.framework.TestCase;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-
 public class ClientTest extends TestCase {
 
     public void testClient() throws IOException {
-        System.out.println(Client.get());
+        System.out.println(Client.get("https://www.javbus.in/"));
+    }
+
+    public void testClient2() throws IOException {
+        System.out.println(Client.get("https://www.javbus.in/SCOP-502"));
     }
 }

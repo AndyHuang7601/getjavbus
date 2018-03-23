@@ -13,14 +13,14 @@ public class Client {
     private static String proxyHost="192.168.1.103";
     private static int proxyPort=8888;
 
-    public static String get() throws IOException {
+    public static String get(String url) throws IOException {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
                 .build();
 
         Request request = new Request.Builder()
-                .url("https://www.javbus.in/")
+                .url(url)
                 .get()
                 .addHeader("dnt", "1")
                 .addHeader("accept-encoding", "deflate")
