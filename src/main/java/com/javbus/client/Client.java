@@ -19,8 +19,9 @@ public class Client {
                 .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
                 .build();
 
+        String gid = "36787896855";
         Request request = new Request.Builder()
-                .url("https://www.javbus.in/ajax/uncledatoolsbyajax.php?gid=36841394788&lang=zh&img=https%3A%2F%2Fpics.javcdn.pw%2Fcover%2F6hwx_b.jpg&uc=0&floor=576")
+                .url("https://www.javbus.in/ajax/uncledatoolsbyajax.php?gid=" + gid + "&lang=zh&uc=0")
                 .get()
                 .addHeader("pragma", "no-cache")
                 .addHeader("cookie", "__cfduid=d5d0ad495ab2106c3c26b42919609fc801520179612; HstCfa3159616=1520179617228; HstCmu3159616=1520179617228; PHPSESSID=36nk4k95v2kdf9aasdknidjej7; HstCnv3159616=4; HstCns3159616=4; __dtsu=D9E9B66B38F3C05A0F43328F02D98F83; HstCla3159616=1522594705635; HstPn3159616=10; HstPt3159616=69")
