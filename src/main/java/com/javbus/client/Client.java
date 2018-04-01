@@ -13,13 +13,12 @@ public class Client {
     private static String proxyHost="192.168.1.103";
     private static int proxyPort=8888;
 
-    public static String get() throws IOException {
+    public static String get(String gid)  {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
                 .build();
 
-        String gid = "36787896855";
         Request request = new Request.Builder()
                 .url("https://www.javbus.in/ajax/uncledatoolsbyajax.php?gid=" + gid + "&lang=zh&uc=0")
                 .get()
@@ -38,9 +37,20 @@ public class Client {
                 .build();
 
 
-        Response response = client.newCall(request).execute();
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        return new String(response.body().bytes(),"UTF8");//http://www.javaeerun.com/p/1461120389148.html
+        try {
+            return new String(response.body().bytes(),"UTF8");//http://www.javaeerun.com/p/1461120389148.html
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "";
 
     }
 }

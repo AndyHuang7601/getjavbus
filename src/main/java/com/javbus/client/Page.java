@@ -11,9 +11,4 @@ import java.util.stream.Collectors;
 
 public class Page {
 
-    public static void parse() throws IOException {
-        String urlContent = Client.get();
-
-        System.out.println(urlContent);
-    }
 }
